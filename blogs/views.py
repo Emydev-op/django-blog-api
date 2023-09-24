@@ -18,7 +18,7 @@ class CommentListView(generics.ListCreateAPIView):
     
     def get_queryset(self):
         pk = self.kwargs['pk']
-        Comment.objects.filter(post=pk)
+        return Comment.objects.filter(post=pk)
 
 class CommentDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
